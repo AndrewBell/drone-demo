@@ -1,0 +1,14 @@
+pipeline:
+  test:
+    image: maven:alpine
+    commands:
+      - mvn install
+
+  docker:
+    image: plugins/docker
+    repo: recursivechaos/drone-demo
+
+  deploy:
+    image: maven:alpine
+    commands:
+      - echo "This is where we would do some deployment"
